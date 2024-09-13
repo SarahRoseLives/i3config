@@ -121,6 +121,21 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# TV Mode
+mode "tv" {
+    bindsym j exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py left
+    bindsym k exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py down
+    bindsym l exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py up
+    bindsym semicolon exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py right
+    bindsym o exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py select
+    bindsym h exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py home
+    bindsym p exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py play
+    bindsym b exec /home/rose/.config/i3/venv/bin/python3 /home/rose/.config/i3/rokuctl.py back
+    bindsym Escape mode "default"
+    bindsym $mod+t mode "default"
+}
+
+
 # Plasma integration
 exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop @ QRect.*"] kill; floating enable; border none
